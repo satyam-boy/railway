@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ticket Reservation Response</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightyellow;
+        }
+        header {
+            background-color: cyan;
+            color: red;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .response-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: lightgray;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .response-container p {
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    here  is the response.
+    <header>
+        <h1>Ticket Reservation Confirmation</h1>
+    </header>
+
+    <div class="response-container">
+        <h2>Booking Summary</h2>
+        <p><strong>Passenger Name:</strong> <span id="passenger-name"></span></p>
+        <p><strong>Email Address:</strong> <span id="email"></span></p>
+        <p><strong>Phone Number:</strong> <span id="phone"></span></p>
+        <p><strong>Origin Station:</strong> <span id="origin"></span></p>
+        <p><strong>Destination Station:</strong> <span id="destination"></span></p>
+        <p><strong>Journey Date:</strong> <span id="journey-date"></span></p>
+        <p><strong>Class:</strong> <span id="class"></span></p>
+    </div>
+
+    <script>
+        // Simulate the form data display (replace with actual data from server in real-world scenarios)
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Get form data from URL parameters (in a real scenario, this would come from server-side processing)
+        document.getElementById('passenger-name').textContent = urlParams.get('passenger-name');
+        document.getElementById('email').textContent = urlParams.get('email');
+        document.getElementById('phone').textContent = urlParams.get('phone');
+        document.getElementById('origin').textContent = urlParams.get('origin');
+        document.getElementById('destination').textContent = urlParams.get('destination');
+        document.getElementById('journey-date').textContent = urlParams.get('journey-date');
+        document.getElementById('class').textContent = urlParams.get('class');
+    </script>
 </body>
 </html>

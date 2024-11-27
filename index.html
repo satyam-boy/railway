@@ -21,7 +21,7 @@
             max-width: 600px;
             margin: 20px auto;
             padding: 20px;
-            background: light white;
+            background: lightgray;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
@@ -33,7 +33,7 @@
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid 2;
+            border: 1px solid black; /* Fixed border style */
             border-radius: 4px;
         }
         form button {
@@ -43,7 +43,7 @@
             cursor: pointer;
         }
         form button:hover {
-            background-color:pink;
+            background-color: pink;
         }
     </style>
 </head>
@@ -52,8 +52,8 @@
         <h1>Online Railway Ticket Reservation</h1>
     </header>
 
-    <form>
-<link rel="stylesheet" href="style.css">
+    <form action="response.html" method="GET">
+
         <label for="origin">Origin Station:</label>
         <input type="text" id="origin" name="origin" placeholder="Enter origin station" required>
 
@@ -79,7 +79,7 @@
         <label for="phone">Phone Number:</label>
         <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
 
-        <a href="response.html"><button type="submit">Book Ticket</button></a>
+        <button type="submit">Book Ticket</button>
     </form>
 </body>
 </html>

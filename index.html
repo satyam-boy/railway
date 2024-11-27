@@ -9,13 +9,36 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: hotpink;
+            background-color: lightblue;
         }
         header {
             background-color: cyan;
             color: red;
-            padding: 10px 20px;
+            padding: 20px 40px;
             text-align: center;
+        }
+        .main-content {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .main-content h2 {
+            font-size: 24px;
+            color: darkblue;
+        }
+        .main-content p {
+            font-size: 18px;
+            color: black;
+        }
+        .main-content a {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .main-content a:hover {
+            background-color: pink;
         }
         form {
             max-width: 600px;
@@ -33,7 +56,7 @@
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid black; /* Fixed border style */
+            border: 1px solid black;
             border-radius: 4px;
         }
         form button {
@@ -45,6 +68,18 @@
         form button:hover {
             background-color: pink;
         }
+        .response-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: lightyellow;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: none;
+        }
+        .response-container p {
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -52,8 +87,12 @@
         <h1>Online Railway Ticket Reservation</h1>
     </header>
 
-    <form action="response.html" method="GET">
+    <div class="main-content">
+        <h2>Welcome to the Online Railway Ticket Reservation System</h2>
+        <p>Book your train tickets with ease. Simply fill in the details and get your ticket.</p>
+    </div>
 
+    <form id="reservation-form">
         <label for="origin">Origin Station:</label>
         <input type="text" id="origin" name="origin" placeholder="Enter origin station" required>
 
@@ -81,5 +120,45 @@
 
         <button type="submit">Book Ticket</button>
     </form>
+
+    <div class="response-container" id="response-container">
+        <h2>Booking Summary</h2>
+        <p><strong>Passenger Name:</strong> <span id="response-passenger-name"></span></p>
+        <p><strong>Email Address:</strong> <span id="response-email"></span></p>
+        <p><strong>Phone Number:</strong> <span id="response-phone"></span></p>
+        <p><strong>Origin Station:</strong> <span id="response-origin"></span></p>
+        <p><strong>Destination Station:</strong> <span id="response-destination"></span></p>
+        <p><strong>Journey Date:</strong> <span id="response-journey-date"></span></p>
+        <p><strong>Class:</strong> <span id="response-class"></span></p>
+    </div>
+
+    <script>
+        // Handle the form submission
+        document.getElementById('reservation-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting and reloading the page
+
+            // Get form data
+            const passengerName = document.getElementById('passenger-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const origin = document.getElementById('origin').value;
+            const destination = document.getElementById('destination').value;
+            const journeyDate = document.getElementById('journey-date').value;
+            const classType = document.getElementById('class').value;
+
+            // Populate the response section
+            document.getElementById('response-passenger-name').textContent = passengerName;
+            document.getElementById('response-email').textContent = email;
+            document.getElementById('response-phone').textContent = phone;
+            document.getElementById('response-origin').textContent = origin;
+            document.getElementById('response-destination').textContent = destination;
+            document.getElementById('response-journey-date').textContent = journeyDate;
+            document.getElementById('response-class').textContent = classType;
+
+            // Show the response section and hide the form
+            document.getElementById('response-container').style.display = 'block';
+            document.getElementById('reservation-form').style.display = 'none';
+        });
+    </script>
 </body>
 </html>

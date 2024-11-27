@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Railway Ticket Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hotpink;
+        }
+        header {
+            background-color: cyan;
+            color: red;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: light white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input, form select, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid 2;
+            border-radius: 4px;
+        }
+        form button {
+            background-color: blue;
+            color: yellow;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Railway Ticket Reservation</h1>
+    </header>
+
+    <form>
+<link rel="stylesheet" href="style.css">
+        <label for="origin">Origin Station:</label>
+        <input type="text" id="origin" name="origin" placeholder="Enter origin station" required>
+
+        <label for="destination">Destination Station:</label>
+        <input type="text" id="destination" name="destination" placeholder="Enter destination station" required>
+
+        <label for="journey-date">Journey Date:</label>
+        <input type="date" id="journey-date" name="journey-date" required>
+
+        <label for="class">Select Class:</label>
+        <select id="class" name="class" required>
+            <option value="sleeper">Sleeper Class</option>
+            <option value="first-class">First Class</option>
+            <option value="ac">AC Compartment</option>
+        </select>
+
+        <label for="passenger-name">Passenger Name:</label>
+        <input type="text" id="passenger-name" name="passenger-name" placeholder="Enter your name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <a href="response.html"><button type="submit">Book Ticket</button></a>
+    </form>
+</body>
+</html>

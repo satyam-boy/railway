@@ -109,6 +109,48 @@
             <option value="ac">AC Compartment</option>
         </select>
 
+        <label for="train">Select Train:</label>
+        <select id="train" name="train" required>
+            <option value="choose">Select Your Train</option>
+            <option value="barauni mail">Not available barauni mail(11123)</option>
+            <option value="Mahakoshal Express">Mahakoshal Express(47535)</option>
+            <option value="Udaypur intersity Express">Udaypur intersity Express(47542)</option>
+            <option value="Rajdhani Express">Not available Rajdhani Express(43635)</option>
+            <option value="Duronto Express">Duronto Express(44675)</option>
+            <option value="Mumbai Express">Not available Mumbai Express(85780)</option>
+            <option value="barauni mail">barauni mail(67877)</option>
+            <option value="Mahakoshal Express"> Not available Mahakoshal Express(51643)</option>
+            <option value="Udaypur intersity Express">Udaypur intersity Express(21358)</option>
+            <option value="Rajdhani Express">Rajdhani Express(47491)</option>
+            <option value="Shatabdi Express">Shatabdi Express(40836)</option>
+            <option value="Hamsafar Express">Not available Hamsafar Express(35488)</option>
+        </select>
+        
+        <label for="Seat">Select Your Seat:</label>
+        <select id="Seat" name="Seat" required>
+            <option value="choose">Select Your Seat</option>
+            <option value="S1">S1</option>
+            <option value="S2">S2</option>
+            <option value="S3">S3</option>
+            <option value="S4">S4</option>
+            <option value="S5">S5</option>
+            <option value="A1">A1</option>
+            
+            <option value="A2">A2</option>
+            <option value="A3">A3</option>
+            <option value="A4">A4</option>
+            <option value="A5">A5</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="B3">B3</option>
+            <option value="B4">B4</option>
+            <option value="B5">B5</option>
+            
+        </select>
+
+
+
+
         <label for="passenger-name">Passenger Name:</label>
         <input type="text" id="passenger-name" name="passenger-name" placeholder="Enter your name" required>
 
@@ -130,6 +172,8 @@
         <p><strong>Destination Station:</strong> <span id="response-destination"></span></p>
         <p><strong>Journey Date:</strong> <span id="response-journey-date"></span></p>
         <p><strong>Class:</strong> <span id="response-class"></span></p>
+        <p><strong>Train:</strong> <span id="response-train"></span></p>
+        <p><strong>Seat:</strong> <span id="response-Seat"></span></p>
     </div>
 
     <script>
@@ -145,6 +189,9 @@
             const destination = document.getElementById('destination').value;
             const journeyDate = document.getElementById('journey-date').value;
             const classType = document.getElementById('class').value;
+            const train = document.getElementById('train').value;
+            const Seat = document.getElementById('Seat').value;
+            
 
             // Populate the response section
             document.getElementById('response-passenger-name').textContent = passengerName;
@@ -154,6 +201,10 @@
             document.getElementById('response-destination').textContent = destination;
             document.getElementById('response-journey-date').textContent = journeyDate;
             document.getElementById('response-class').textContent = classType;
+            document.getElementById('response-train').textContent = train;
+            document.getElementById('response-Seat').textContent = Seat;
+            
+
 
             // Show the response section and hide the form
             document.getElementById('response-container').style.display = 'block';
